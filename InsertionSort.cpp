@@ -20,8 +20,8 @@ int main(){
 
     for(int i=1;i<n;i++){
         int j=i;
-        while(j>0 &&arr[j-1]>arr[j]){
-            swap(arr[j-1],arr[j]);
+        while(j>0 &&arr[j-1]>arr[j]){  // Time Complexity --> O(n^2) worst and average case
+            swap(arr[j-1],arr[j]); // with some optimization we can make it O(n) i.e Best case
             j--;
 
         }
