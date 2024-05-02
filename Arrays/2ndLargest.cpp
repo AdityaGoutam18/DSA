@@ -59,7 +59,7 @@ int main()
         }
         else if (arr[i] < largest && arr[i] > secondLargest)
         {
-            secondLargest = arr[n - 1];
+            secondLargest = arr[i];
         }
     }
     cout << secondLargest;
