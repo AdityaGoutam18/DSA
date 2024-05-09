@@ -27,7 +27,7 @@ int FirstOccurence(int arr[], int n, int key)
         }
         mid = s + (e - s) / 2;
     }
-    return ans;
+    return ans;// returns index
 }
 
 int LastOccurence(int arr[], int n, int key)
@@ -56,7 +56,7 @@ int LastOccurence(int arr[], int n, int key)
         }
         mid = s + (e - s) / 2;
     }
-    return ans;
+    return ans;// returns index
 }
 int main()
 {
@@ -69,6 +69,6 @@ int main()
     // or (last occurence - first occurence)+1;
 
     cout<<"Total number of Occurence of 3 is: "<<(LastOccurence(arr,n,3)-FirstOccurence(arr,n,3))+1<<endl;
-
+    // lastOccurence(index)-firstOccurence(index)+1
 
 }
