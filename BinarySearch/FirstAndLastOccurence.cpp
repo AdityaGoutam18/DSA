@@ -27,7 +27,7 @@ int FirstOccurence(int arr[], int n, int key)
         }
         mid = s + (e - s) / 2;
     }
-    return ans;
+    return ans;  // returns index
 }
 
 int LastOccurence(int arr[], int n, int key)
@@ -56,7 +56,7 @@ int LastOccurence(int arr[], int n, int key)
         }
         mid = s + (e - s) / 2;
     }
-    return ans;
+    return ans;// returns index
 }
 
 int main()
@@ -64,6 +64,6 @@ int main()
     int arr[5] = {1, 2, 3, 3, 4};
     int n = sizeof(arr) / sizeof(arr[0]);
 
-    cout << "First Occurence of 3 is at index: " << FirstOccurence(arr, n, 3) << endl;
-    cout << "Last Occurence of 3 is at index: " << LastOccurence(arr, n, 3) << endl;
+    cout << "First Occurence of 3 is at index: " << FirstOccurence(arr, n, 3) << endl;// returns index
+    cout << "Last Occurence of 3 is at index: " << LastOccurence(arr, n, 3) << endl;// returns index
 }
