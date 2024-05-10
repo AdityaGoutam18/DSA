@@ -1,69 +1,60 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
-int FirstOccurence(int arr[], int n, int key)
-{
+vector<int> firstAndlast(vector<int> &arr,int n, int k){
     int s = 0;
     int e = n - 1;
-    int ans = -1;
+    int firstOccurence = -1;
+    int lastOccurence = -1;
 
-    int mid = s + (e - s) / 2;
-
-    while (s <= e)
-    {
-        if (arr[mid] == key)
-        {
-            ans = mid;
-
+    while(s<=e){
+        int mid = s + (e-s)/2;
+        if(arr[mid]==k){
+            firstOccurence = mid;
             e = mid - 1;
         }
-        else if (arr[mid] > key)
-        {
-            e = mid - 1;
-        }
-        else
-        {
+        else if(arr[mid]<k){
             s = mid + 1;
         }
-        mid = s + (e - s) / 2;
+        else{
+            e = mid - 1;
+        }
     }
-    return ans;  // returns index
-}
 
-int LastOccurence(int arr[], int n, int key)
-{
-    int s = 0;
-    int e = n - 1;
-    int ans = -1;
+    s = 0;
+    e = n - 1;
 
-    int mid = s + (e - s) / 2;
-
-    while (s <= e)
-    {
-        if (arr[mid] == key)
-        {
-            ans = mid;
-
+    while(s<=e){
+        int mid = s + (e-s)/2;
+        if(arr[mid]==k){
+            lastOccurence = mid;
             s = mid + 1;
         }
-        else if (arr[mid] > key)
-        {
+        else if(arr[mid]<k){
+            s = mid + 1;
+        }
+        else{
             e = mid - 1;
         }
-        else
-        {
-            s = mid + 1;
-        }
-        mid = s + (e - s) / 2;
     }
-    return ans;// returns index
+
+    if(firstOccurence ==-1 && lastOccurence==-1){
+        return {-1};
+    }else{
+        return {firstOccurence, lastOccurence};
+    }
 }
 
 int main()
 {
-    int arr[5] = {1, 2, 3, 3, 4};
-    int n = sizeof(arr) / sizeof(arr[0]);
+    vector<int> v = {1, 3, 3, 4};
+    int n = v.size();
 
-    cout << "First Occurence of 3 is at index: " << FirstOccurence(arr, n, 3) << endl;// returns index
-    cout << "Last Occurence of 3 is at index: " << LastOccurence(arr, n, 3) << endl;// returns index
+    int k;
+    cin >> k;
+
+    vector<int> ans = firstAndlast(v, n, k);
+    for(auto it:ans){
+        cout<<it<<" ";
+    }
 }
