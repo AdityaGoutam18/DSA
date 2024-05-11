@@ -51,7 +51,7 @@ int findPosition(vector<int> &arr, int n, int k){
 
     int main()
 {
-    vector<int> v={7,9,1,2,3};
+    vector<int> v={5,1,3};
     int n = v.size();
 
     int k;
